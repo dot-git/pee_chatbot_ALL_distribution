@@ -20,6 +20,7 @@ services:
   chatbot_server:
     container_name: "chatbot_srv"
     build: .
+    command: ["poetry", "run", "python", "app/main.py"]
     volumes:
       - type: bind
         source: .
@@ -27,7 +28,7 @@ services:
     ports:
       - 8000:8000
     environment:
-      OPENCALM_SERVER_HOST: 192.168.50.2
+      OPENCALM_SERVER_HOST: http://192.168.50.2:8008
     networks:
       chatbot_network:
         ipv4_address: 192.168.50.3

@@ -4,5 +4,5 @@ Dockerfile
 docker-compose.yml
 *.md
 request_test.json
-model/
+# model/
 .DS_Store
