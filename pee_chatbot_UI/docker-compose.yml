@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+  llm_api:
+    container_name: "llm_api_calm"
+    build:
+      context: ../pee_chatbot_LLM_CALM/
+      dockerfile: ./Dockerfile
+    volumes:
+      - type: bind
+        source: ../pee_chatbot_LLM_CALM/.
+        target: /app
+    ports:
+      - 8008:8008
+    environment:
+      - DOWNLOAD_MODEL=false
+    networks:
+      chatbot_network:
+        ipv4_address: 192.168.50.2
+
+  chatbot_server:
+    container_name: "chatbot_srv"
+    build:
+      context: ../pee_chatbot_server/
+      dockerfile: ./Dockerfile
+    volumes:
+      - type: bind
+        source: ../pee_chatbot_server/.
+        target: /work
+    ports:
+      - 8000:8000
+    environment:
+      OPENCALM_SERVER_HOST: 192.168.50.2
+    networks:
+      chatbot_network:
+        ipv4_address: 192.168.50.3
+
+  chatbot_ui:
+    container_name: "chatbot_ui"
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      OPENAI_API_HOST: http://192.168.50.3:8000
+    depends_on:
+      - chatbot_server
+    networks:
+      chatbot_network:
+        ipv4_address: 192.168.50.4
+
+networks:
+  chatbot_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.50.0/24
