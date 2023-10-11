@@ -1,0 +1,8 @@
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+*.md
+request_test.json
+model/
+.DS_Store

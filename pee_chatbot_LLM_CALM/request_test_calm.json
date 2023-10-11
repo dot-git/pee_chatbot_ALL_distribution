@@ -1,0 +1,9 @@
+{
+  "inputs": "東京スカイツリーは",
+  "parameters": {
+    "max_new_tokens": 128,
+    "do_sample": true,
+    "temperature": 0.7
+  },
+  "stream": true
+}
