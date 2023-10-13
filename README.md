@@ -245,3 +245,15 @@ curl -X POST "https://pee-chatbot-api-service-l2f226knga-an.a.run.app/v1/chat/co
 ```zsh
 gcloud run deploy pee-chatbot-ui-service --region asia-northeast1 --allow-unauthenticated --image asia-northeast1-docker.pkg.dev/pee-chatbot-all-distribution/pee-chatbot-repo/pee-chatbot-ui --port 3000 --set-env-vars="OPENAI_API_HOST=https://pee-chatbot-api-service-l2f226knga-an.a.run.app"
 ```
+
+## 参考資料
+
+- ビルドするマシンと実行するマシンの CPU アーキテクチャが異なっていると起動に失敗する
+  - <a href="https://zenn.dev/yutan/articles/bc0ef89b15d2ba" title="CloudRunのデプロイに失敗した時のメモ（failed to load /bin/sh: exec format error）" target="_blank">CloudRun のデプロイに失敗した時のメモ（failed to load /bin/sh: exec format error）</a>
+  - <a href="https://zenn.dev/msksgm/scraps/d667e2b2eecf4e" title="GCP 初心者の M1 Mac ユーザーが Cloud Run にデプロイするときにドツボにはまったこと" target="_blank">GCP 初心者の M1 Mac ユーザーが Cloud Run にデプロイするときにドツボにはまったこと</a>
+  - <a href="https://cloud.google.com/kubernetes-engine/docs/how-to/build-multi-arch-for-arm?hl=ja" title="Arm ワークロード向けのマルチアーキテクチャ イメージのビルド  |  Google Kubernetes Engine（GKE）  |  Google Cloud" target="_blank">Arm ワークロード向けのマルチアーキテクチャ イメージのビルド  |  Google Kubernetes Engine（GKE）  |  Google Cloud</a>
+- <a href="https://cloud.google.com/sdk/docs/install-sdk?hl=ja" title="クイックスタート: Google Cloud CLI をインストールする  |  Google Cloud CLI のドキュメント" target="_blank">クイックスタート: Google Cloud CLI をインストールする  |  Google Cloud CLI のドキュメント</a>
+- <a href="https://zenn.dev/kazumax4395/articles/66ec5c259c950c#cloud-armor" title="【GCP/Next.js】Cloud Runを使用したインフラ構築" target="_blank">【GCP/Next.js】Cloud Run を使用したインフラ構築</a>
+- <a href="https://cloud.google.com/load-balancing/docs/l7-internal/setting-up-l7-internal-serverless?hl=ja" title="Cloud Run を使用してリージョン内部アプリケーション ロードバランサを設定します。  |  負荷分散  |  Google Cloud" target="_blank">Cloud Run を使用してリージョン内部アプリケーション ロードバランサを設定します。  |  負荷分散  |  Google Cloud</a>
+- <a href="https://cloud.google.com/load-balancing/docs/https/setting-up-reg-ext-https-serverless?hl=ja" title="Cloud Run を使用してリージョン外部アプリケーション ロードバランサを設定します。  |  負荷分散  |  Google Cloud" target="_blank">Cloud Run を使用してリージョン外部アプリケーション ロードバランサを設定します。  |  負荷分散  |  Google Cloud</a>
+- <a href="https://qiita.com/nekoshita_yuki/items/95d2d6a889629a557c54#%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%B9vpc%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%A3%E3%81%A6" title="Google Cloud Run の個人的なQ&A（2021年2月現在） - Qiita" target="_blank">Google Cloud Run の個人的な Q&A（2021 年 2 月現在） - Qiita</a>
