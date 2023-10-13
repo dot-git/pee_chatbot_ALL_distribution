@@ -2,8 +2,7 @@
 name = "custom_chatbot_server"
 version = "0.1.0"
 description = ""
-authors = ["Masahiro Nishimi <mah@edged-edge.jp>"]
-readme = "README.md"
+authors = ["ej <xxx@gmail.co.jp>"]
 packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]

@@ -35,7 +35,7 @@ class OpenCalm7B_LLM(LLM):
 
         print(request.dict())
 
-        hostname = os.getenv("OPENCALM_SERVER_HOST", default="127.0.0.1")
+        hostname = os.getenv("OPENCALM_SERVER_HOST", default="http://127.0.0.1:8008")
 
         resp = requests.post(
             f"{hostname}/api/chat-stream/",
